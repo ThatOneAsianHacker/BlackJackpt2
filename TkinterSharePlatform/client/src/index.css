@@ -1,0 +1,101 @@
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Inter:wght@300;400;500;600&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --background: 240 10% 3.9%; /* #0A0A0B */
+  --foreground: 0 0% 98%; /* #FAFAFA */
+  --muted: 240 3.7% 15.9%; /* #27272A */
+  --muted-foreground: 240 5% 64.9%; /* #A1A1AA */
+  --popover: 240 10% 3.9%; /* #0A0A0B */
+  --popover-foreground: 0 0% 98%; /* #FAFAFA */
+  --card: 240 10% 3.9%; /* #1F2937 */
+  --card-foreground: 0 0% 98%; /* #FAFAFA */
+  --border: 240 3.7% 15.9%; /* #374151 */
+  --input: 240 3.7% 15.9%; /* #374151 */
+  --primary: 47 96% 53%; /* #D4AF37 */
+  --primary-foreground: 240 10% 3.9%; /* #111827 */
+  --secondary: 240 3.7% 15.9%; /* #374151 */
+  --secondary-foreground: 0 0% 98%; /* #FAFAFA */
+  --accent: 240 3.7% 15.9%; /* #374151 */
+  --accent-foreground: 0 0% 98%; /* #FAFAFA */
+  --destructive: 0 84.2% 60.2%; /* #EF4444 */
+  --destructive-foreground: 60 9.1% 97.8%; /* #FEFEFE */
+  --ring: 240 4.9% 83.9%; /* #D1D5DB */
+  --radius: 0.5rem;
+  
+  /* Custom casino colors */
+  --casino-green: 151 100% 15%; /* #0F4C3A */
+  --casino-gold: 47 96% 53%; /* #D4AF37 */
+  --felt-green: 120 100% 18%; /* #1B5E20 */
+  --card-red: 0 84% 47%; /* #DC2626 */
+}
+
+.dark {
+  --background: 240 10% 3.9%; /* #0A0A0B */
+  --foreground: 0 0% 98%; /* #FAFAFA */
+  --muted: 240 3.7% 15.9%; /* #27272A */
+  --muted-foreground: 240 5% 64.9%; /* #A1A1AA */
+  --popover: 240 10% 3.9%; /* #0A0A0B */
+  --popover-foreground: 0 0% 98%; /* #FAFAFA */
+  --card: 240 10% 3.9%; /* #1F2937 */
+  --card-foreground: 0 0% 98%; /* #FAFAFA */
+  --border: 240 3.7% 15.9%; /* #374151 */
+  --input: 240 3.7% 15.9%; /* #374151 */
+  --primary: 47 96% 53%; /* #D4AF37 */
+  --primary-foreground: 240 10% 3.9%; /* #111827 */
+  --secondary: 240 3.7% 15.9%; /* #374151 */
+  --secondary-foreground: 0 0% 98%; /* #FAFAFA */
+  --accent: 240 3.7% 15.9%; /* #374151 */
+  --accent-foreground: 0 0% 98%; /* #FAFAFA */
+  --destructive: 0 62.8% 30.6%; /* #991B1B */
+  --destructive-foreground: 0 0% 98%; /* #FAFAFA */
+  --ring: 240 4.9% 83.9%; /* #D1D5DB */
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply font-sans antialiased bg-background text-foreground;
+    font-family: 'Inter', sans-serif;
+  }
+}
+
+@layer components {
+  .felt-texture {
+    background: linear-gradient(135deg, hsl(var(--casino-green)) 0%, hsl(var(--felt-green)) 100%);
+    background-image: 
+      radial-gradient(circle at 25% 25%, rgba(255,255,255,0.05) 2px, transparent 2px),
+      radial-gradient(circle at 75% 75%, rgba(255,255,255,0.03) 1px, transparent 1px);
+    background-size: 40px 40px;
+  }
+  
+  .card-shadow {
+    box-shadow: 0 4px 8px rgba(0,0,0,0.3), 0 2px 4px rgba(0,0,0,0.2);
+  }
+  
+  .chip-shadow {
+    box-shadow: 0 2px 8px rgba(212, 175, 55, 0.3);
+  }
+  
+  .glow-gold {
+    box-shadow: 0 0 20px rgba(212, 175, 55, 0.5);
+  }
+  
+  .card-animation {
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  }
+  
+  .card-animation:hover {
+    transform: translateY(-2px);
+  }
+
+  .font-display {
+    font-family: 'Playfair Display', serif;
+  }
+}
